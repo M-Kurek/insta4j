@@ -25,7 +25,7 @@
 	<packaging>pom</packaging>
 	<name>insta4j</name>
 	<description>A Java library for the Instapaper Simple and Full API</description>
-	<url>http://dzontak.github.com/insta4j/</url>
+	<url>https://github.com/M-Kurek/insta4j/?from=http://dzontak.github.com/insta4j/</url>
 	<licenses>
 		<license>
 			<name>Apache License 2.0</name>
@@ -34,22 +34,11 @@
 		</license>
 	</licenses>
 	<scm>
-		<url>https://github.com/dzontak/insta4j</url>
-		<connection>scm:git:git@github.com:dzontak/insta4j.git</connection>
-		<developerConnection>scm:git:git@github.com:dzontak/insta4j.git</developerConnection>
+		<url>https://github.com/M-Kurek/insta4j</url>
+		<connection>scm:git:git@github.com:M-Kurek/insta4j.git</connection>
+		<developerConnection>scm:git:git@github.com:M-Kurek/insta4j.git</developerConnection>
 	</scm>
-	<distributionManagement>
-		<repository>
-			<id>oss.sonatype.org</id>
-			<name>sonatype repo</name>
-			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
-		</repository>
-		<snapshotRepository>
-			<id>oss.sonatype.org</id>
-			<name>sonatype snapshot repo</name>
-			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
-		</snapshotRepository>
-	</distributionManagement>
+
 	<developers>
 		<developer>
 			<id>dzontak</id>
@@ -57,9 +46,9 @@
 			<email>dzontak@gmail.com</email>
 			<url>http://toilettwit.info</url>
 			<roles>
+				<role>originator</role>
 				<role>lead</role>
 				<role>architect</role>
-				<role>developer</role>
 			</roles>
 			<timezone>-1</timezone>
 		</developer>
@@ -67,6 +56,5 @@
 	<modules>
 		<module>insta4j-core</module>
 		<module>insta4j-client</module>
-		<module>insta4j-simpleclient</module>
 	</modules>
 </project>

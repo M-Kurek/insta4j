@@ -53,12 +53,8 @@
 			<timezone>-1</timezone>
 		</developer>
 	</developers>
-	<issueManagement>
-		<system>Github</system>
-		<url>https://github.com/dzontak/insta4j/issues</url>
-	</issueManagement>
-	<dependencies>
 
+	<dependencies>
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
@@ -66,11 +62,7 @@
 			<scope>provided</scope>
 			<optional>true</optional>
 		</dependency>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.8.1</version>
-		</dependency>
+
 		<dependency>
 			<groupId>com.sun.jersey</groupId>
 			<artifactId>jersey-client</artifactId>
@@ -126,7 +118,14 @@
 			<artifactId>insta4j-core</artifactId>
 			<version>1.0.2-SNAPSHOT</version>
 		</dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
 	</dependencies>
+
 	<repositories>
 		<repository>
 			<id>maven2-repository.java.net</id>
@@ -179,8 +178,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
 					<encoding>UTF-8</encoding>
-					<source>1.5</source>
-					<target>1.5</target>
+					<source>1.7</source>
+					<target>1.7</target>
 				</configuration>
 				<version>2.3.2</version>
 			</plugin>
@@ -212,28 +211,6 @@
 					</execution>
 				</executions>
 				<version>2.1.2</version>
-			</plugin>
-			<plugin>
-				<artifactId>maven-javadoc-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>javadoc-jar</id>
-						<phase>package</phase>
-						<goals>
-							<goal>jar</goal>
-						</goals>
-						<configuration>
-							<excludePackageNames>
-								insta4j.*
-							</excludePackageNames>
-						</configuration>
-					</execution>
-				</executions>
-				<configuration>
-					<charset>UTF-8</charset>
-					<show>public</show>
-				</configuration>
-				<version>2.7</version>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

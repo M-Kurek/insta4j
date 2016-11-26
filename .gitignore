@@ -4,4 +4,8 @@
 /.idea/
 /*.iml
 /out/
-/insta4j.properties
+/**/*.log
+/**/*.iml
+/**/*.properties
+insta4j-client/src/test/resources/insta4j.properties
+/mk-later

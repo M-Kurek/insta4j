@@ -25,8 +25,17 @@
 		</layout>
 	</appender>
 
+	<appender name="logfile" class="org.apache.log4j.RollingFileAppender">
+		<param name="Threshold" value="INFO" />
+		<param name="File" value="app.log"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %-5level %c{25}: %m [%t]%n" />
+		</layout>
+	</appender>
+
 	<root>
 		<priority value="debug"/>
+		<appender-ref ref="logfile"/>
 		<appender-ref ref="console"/>
 	</root>
 

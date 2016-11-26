@@ -20,10 +20,8 @@ import com.sun.jersey.core.util.FeaturesAndProperties;
  * The client configuration that declares common property names,
  * features, properties, provider classes and singleton instances that
  * may be used by a InstaClient instance.
- * <p/>
  * An instance of this interface may be passed to the InstaClient when
  * the client is created as follows:
- * <p/>
  * <blockquote><pre>
  *     InstaConfig ic = ...
  *     InstaClient c = InstaClinet.create(ic);
@@ -35,7 +33,6 @@ public interface InstaClientConfig extends FeaturesAndProperties {
 	/**
 	 * Property represent a name of the property file in the classpath that has the
 	 * instapaper full api
-	 * <p/>
 	 * The value MUST be an instance of {@link java.lang.Boolean}.
 	 * If the property is absent then the default value is "true".
 	 */

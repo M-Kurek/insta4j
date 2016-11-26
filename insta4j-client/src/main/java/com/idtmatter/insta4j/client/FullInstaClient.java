@@ -136,6 +136,7 @@ public class FullInstaClient implements InstaClient {
 	}
 
 	public static FullInstaClient create(final String username, final String password) {
+		log.info("start for username : " + username);
 		return new FullInstaClient(username, password);
 	}
 
@@ -213,6 +214,8 @@ public class FullInstaClient implements InstaClient {
 		postData.add("x_auth_username", username);
 		postData.add("x_auth_password", password);
 		postData.add("x_auth_mode", "client_auth");
+
+		//TODO limit on time after prev. req?
 		final ClientResponse response = processResponse(
 				resource.type(MediaType.APPLICATION_FORM_URLENCODED).post(ClientResponse.class, postData));
 
@@ -319,17 +322,17 @@ public class FullInstaClient implements InstaClient {
 	 * @return The bookmark on success, which may not be new: if this user already saved this URL,
 	 *         it will be moved to the top of the Unread list (or the specified folder) and assigned the new values for title, description, and content (see below).
 	 *         In addition to standard invalid-parameter errors, you may encounter these special errors:
-	 *         <p/>
+	 *         <p>
 	 *         1220: Domain requires full content to be supplied — Pages from this domain require the content parameter below, usually because a login or subscription is required to get their content, and you haven’t supplied it. If you already have the page loaded in a browser environment, simply re-submit with the body contents (e.g. Javascript’s document.body.innerHTML). If not, you may need to open it in a browser first, or give the user a helpful message explaining that content from this site needs to be viewed in a browser before saving to Instapaper.
 	 *         1221: Domain has opted out of Instapaper compatibility — The publisher of this domain has requested that Instapaper not save any of its content. Do not attempt to work around this, which is prohibited in the API Terms of Use. Please give the user a helpful message, where applicable, that the publishers of this site do not permit Instapaper usage.
 	 *         Supplying HTML content for a bookmarkYou can optionally supply the full HTML content of pages that Instapaper wouldn’t otherwise be able to crawl from its servers, such as pages that require logins or subscriptions.
-	 *         <p/>
-	 *         content: The full HTML content of the page, or just the <body> node’s content if possible, such as the value of document.body.innerHTML in Javascript. Must be UTF-8.
+	 *         <p>
+	 *         content: The full HTML content of the page, or just the &lt;body&gt; node’s content if possible, such as the value of document.body.innerHTML in Javascript. Must be UTF-8.
 	 *         A bookmark’s content is not shared to other users through any sharing functionality (such as Starred-folder subscriptions). It is only used to generate the text version of the bookmark for the user that created it.
 	 *         This is not for material that doesn’t have a dedicated, permanent URL or should be excluded from sharing and tracking functionality completely, such as a private message on a social network, driving directions, or the results of a session. For that, see “Private sources” below.
 	 *         Private sourcesBookmarks can be private, such as the bookmarks that result from Instapaper’s email-in text feature. Private bookmarks are not shared to other users through any sharing functionality (such as Starred-folder subscriptions), and they do not have URLs.
 	 *         Set this parameter to a non-empty string to set a bookmark to private:
-	 *         <p/>
+	 *         <p>
 	 *         is_private_from_source: A short description label of the source of the private bookmark, such as “email” or “MyNotebook Pro”.
 	 *         When using this, values passed to url will be ignored, and the content parameter (above) is required.
 	 *         In any bookmark objects output by this API, the private_source field will be an empty string for public bookmarks, and this value for private bookmarks. They will have an automatically generated, non-functioning value in the url field of the form instapaper://private-content/.... Do not use these URLs in your application.
@@ -486,8 +489,6 @@ public class FullInstaClient implements InstaClient {
 
 	/**
 	 * A list of the account’s user-created folders.
-	 * <p/>
-	 *
 	 * @return A list of the account’s user-created folders. This only includes organizational folders and does
 	 *         not include RSS-feed folders or starred-subscription folders, as the implementation of those is changing in the near future
 	 */
@@ -540,7 +541,7 @@ public class FullInstaClient implements InstaClient {
 	/**
 	 * ReOrders the position of the folders
 	 *
-	 * @param folderPositionMap A <K,V> map where K = Folder Id and V = position
+	 * @param folderPositionMap A &lt;K,V&gt; map where K = Folder Id and V = position
 	 * @return A list of the account’s user-created folders. This only includes organizational folders and does
 	 *         not include RSS-feed folders or starred-subscription folders, as the implementation of those is changing in the near future
 	 */
@@ -655,7 +656,7 @@ public class FullInstaClient implements InstaClient {
 	}
 
 	/**
-	 * Selects {@link InstaRecordBean}s where <param>recordType</param> equals {@link InstaRecordBean#type}
+	 * Selects {@link InstaRecordBean}s where <i>recordType</i> equals {@link InstaRecordBean#type}
 	 *
 	 * @param recordBeanList A collection of {@link InstaRecordBean}s
 	 * @param recordType	 A record type

@@ -100,6 +100,7 @@ public class FullInstaClientTest {
 
 
 	@Test
+	@Ignore /*not relevant at 2016-X*/
 	public void shouldAddBookmarkWithCustomTitle() throws Exception {
 		final FullInstaClient client = FullInstaClient.create("jinstapaper@gmail.com", "open");
 		final InstaRecordBean instaRecordBean = client
@@ -142,6 +143,7 @@ public class FullInstaClientTest {
 
 
 	@Test(expected = IllegalArgumentException.class)
+	@Ignore /*not relevant at 2016-X*/
 	public void shouldFailToAddBookmarkToFolderThatDoesNotExist() throws Exception {
 		final FullInstaClient client = FullInstaClient.create("jinstapaper@gmail.com", "open");
 		final InstaRecordBean instaRecordBean = client
@@ -150,6 +152,7 @@ public class FullInstaClientTest {
 	}
 
 	@Test
+	@Ignore /*not relevant at 2016-X*/
 	public void shouldCreateFolder() throws Exception {
 		final FullInstaClient client = FullInstaClient.create("jinstapaper@gmail.com", "open");
 		final InstaRecordBean instaRecordBean = client.createFolder(String.valueOf(System.currentTimeMillis()));
@@ -164,6 +167,7 @@ public class FullInstaClientTest {
 	}
 
 	@Test(expected = IllegalArgumentException.class)
+	@Ignore /*not relevant at 2016-X*/
 	public void shouldDeleteFolderThatDoesNotExist() throws Exception {
 		final FullInstaClient client = FullInstaClient.create("jinstapaper@gmail.com", "open");
 		Assert.assertFalse(client.deleteFolder("000"));
@@ -246,8 +250,8 @@ public class FullInstaClientTest {
 		}
 	}
 
-
 	@Test
+	@Ignore /*not relevant at 2016-X*/
 	public void testDeleteBookmark() {
 		final FullInstaClient client = FullInstaClient.create("jinstapaper@gmail.com", "open");
 		final List<InstaRecordBean> folders = client.listFolders();
@@ -273,6 +277,7 @@ public class FullInstaClientTest {
 	}
 
 	@Test
+	@Ignore /*not relevant at 2016-X*/
 	public void shouldMoveBookmark() {
 		final FullInstaClient client = FullInstaClient.create("jinstapaper@gmail.com", "open");
 		final List<InstaRecordBean> folders = client.listFolders();

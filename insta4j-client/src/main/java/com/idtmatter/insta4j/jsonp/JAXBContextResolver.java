@@ -26,7 +26,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Resloves mapping from json <-> JaxB from Instapaper json responses to {@link com.idtmatter.insta4j.jaxb.InstaRecordBean}
+ * Resloves mapping from json &lt;-&gt; JaxB from Instapaper json responses to {@link com.idtmatter.insta4j.jaxb.InstaRecordBean}
  *
  * @author dzontak@gmail.com
  */
